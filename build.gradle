@@ -14,7 +14,7 @@ repositories {
 }
 dependencies {
     antlr "org.antlr:antlr4:4.7.1"
-    compile "org.antlr:antlr4-runtime:4.7.1"
+    runtime "org.antlr:antlr4-runtime:4.7.1"
     compile 'org.ow2.asm:asm-all:5.1'
     testCompile 'junit:junit:4.12'
 }
@@ -28,6 +28,8 @@ generateGrammarSource {
         into "src/main/java"
     }
 }
+
+build.dependsOn generateGrammarSource
 
 compileJava.dependsOn generateGrammarSource
 sourceSets {
