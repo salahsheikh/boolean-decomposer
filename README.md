@@ -3,6 +3,19 @@
 
 # Usage example
 
+Example code:
+```java
+String exp = "A + (B XOR C) NAND B";
+TruthTable t = new TruthTable(exp);
+t.generateTruthTable();
+t.print();
+
+System.out.println("MINTERMS:");
+System.out.println(t.getMinterms().stream().map(String::toString).collect(Collectors.joining(" + ")));
+System.out.println("MAXTERMS:");
+System.out.println(t.getMaxterms().stream().map(String::toString).collect(Collectors.joining()));
+```
+
 For the logical expression `"A + (B XOR C) NAND B"`
 
 ```
